@@ -1,89 +1,20 @@
-IDEALAB PARTNERS SOFTWARE LICENSE
-Version 1.0 — March 2026
+# IDEALAB PARTNERS Custom Software License (v3.0) — Enterprise Edition
 
-Copyright (c) 2026 IDEALAB PARTNERS
-All rights reserved.
+This license governs the use of the **SKILL-CLAUDE-MULTIAGENTES** repository and its associated skills.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## 1. Permission and Scope
+This software is provided as a framework for building agentic business systems. 
+- **Individual Use:** You are permitted to use, modify, and deploy these skills for personal or small business internal operations, provided attribution is maintained.
+- **Commercial Redistribution:** Any attempt to resell these skills as a standalone "Prompt Pack" or "Marketplace" without a dedicated Enterprise Partnership agreement with IDEALAB PARTNERS is strictly prohibited.
 
-1. DEFINITIONS
-   "License" refers to this document.
-   "Licensor" refers to IDEALAB PARTNERS, the copyright owner.
-   "You" (or "Your") means any individual or legal entity exercising
-   permissions granted by this License.
-   "Work" refers to the software, skills, prompts, templates, and
-   documentation made available under this License.
-   "Derivative Work" means any work that is based on the Work,
-   including translations, adaptations, modifications, and derivative
-   forms of documents.
+## 2. No Warranty (10,000% Logic Disclaimer)
+While these skills are engineered for high-fidelity performance, they are provided "AS IS". IDEALAB PARTNERS does not guarantee specific business outcomes or revenue. The user is responsible for auditing all AI outputs, especially in the `contracts` and `analytics-reporting` modules.
 
-2. GRANT OF LICENSE
-   Subject to the terms and conditions of this License, the Licensor
-   hereby grants You a worldwide, non-exclusive, non-transferable,
-   royalty-free license to:
-   a) Use, copy, and study the Work for personal, educational, and
-      internal business purposes;
-   b) Modify the Work and create Derivative Works solely for Your own
-      use or for contributions back to this repository;
-   c) Distribute verbatim copies of the Work, provided that You retain
-      this License notice intact and give prominent credit to
-      IDEALAB PARTNERS.
+## 3. Mandatory Attribution
+All derivative works must include the following header:
+"Built with SKILL-CLAUDE-MULTIAGENTES by IDEALAB PARTNERS."
 
-3. RESTRICTIONS
-   You MAY NOT:
-   a) Sublicense, sell, rent, lease, or commercially distribute the
-      Work or Derivative Works without prior written permission from
-      IDEALAB PARTNERS;
-   b) Remove or alter any copyright notices, trademarks, or attribution
-      statements contained within the Work;
-   c) Use the IDEALAB PARTNERS name, logo, or trademarks to endorse or
-      promote products derived from this Work without written consent;
-   d) Use the Work or any portion of it to train commercial AI models
-      or incorporate it into AI training datasets without explicit
-      written permission.
+## 4. Termination
+Failure to comply with Section 1.2 results in immediate termination of the license and potential legal action.
 
-4. ATTRIBUTION
-   Any permitted distribution or public display of the Work must
-   include the following attribution:
-   "Powered by IDEALAB PARTNERS Multi-Agent Skills Framework — 
-   https://github.com/idealab-partners/idealab-multiagent-skills"
-
-5. CONTRIBUTIONS
-   By submitting a Pull Request or contribution to this repository,
-   You agree that Your contributions are licensed under the same terms
-   as this License, and You grant IDEALAB PARTNERS a perpetual,
-   worldwide, non-exclusive, royalty-free license to use, reproduce,
-   modify, and distribute Your contributions as part of the Work.
-
-6. DISCLAIMER OF WARRANTIES
-   THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-   OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-   NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-   HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY,
-   WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-   FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER
-   DEALINGS IN THE WORK.
-
-7. LIMITATION OF LIABILITY
-   IN NO EVENT SHALL IDEALAB PARTNERS BE LIABLE FOR ANY DIRECT,
-   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY.
-
-8. GOVERNING LAW
-   This License shall be governed by and construed in accordance with
-   the laws of the Republic of Colombia, without regard to its conflict
-   of law provisions.
-
-9. CONTACT
-   For licensing inquiries, permissions, or partnership requests:
-   Email:   legal@idealabpartners.com
-   Website: https://idealabpartners.com
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-© 2026 IDEALAB PARTNERS. All rights reserved.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*© 2026 IDEALAB PARTNERS — All Rights Reserved*
