@@ -1,156 +1,120 @@
-# 🧠 IDEALAB PARTNERS — Multi-Agent Orchestrator Skills
+# 🚀 IDEALAB PARTNERS — Multi-Agent Claude Skills Ecosystem (v2.0)
 
-<div align="center">
+[![Claude Code Compatible](https://img.shields.io/badge/Claude--Code--Compatible-brightgreen?logo=anthropic)](https://anthropic.com/claude)
+[![License: IDEALAB v2.0](https://img.shields.io/badge/License-IDEALAB%20v2.0-blue)](LICENSE)
+[![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-orange)](CHANGELOG.md)
 
-![IDEALAB PARTNERS](https://img.shields.io/badge/IDEALAB-PARTNERS-6C3BF5?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJMMiAxOWgyMEwxMiAyeiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/license-IDEALAB%20v1.0-purple?style=for-the-badge)
-![Skills](https://img.shields.io/badge/skills-9%20agents-blue?style=for-the-badge)
-![Language](https://img.shields.io/badge/language-ES%20%7C%20EN-orange?style=for-the-badge)
-
-**A production-ready library of AI multi-agent skills for digital marketing, brand strategy, and business intelligence.**
-
-[🚀 Quick Start](#-quick-start) · [📚 Skills](#-skill-catalog) · [🤝 Contributing](CONTRIBUTING.md) · [📜 License](LICENSE)
-
-</div>
+Transform Claude into a high-performance business department. This repository contains **22 specialized skills** that guide Claude (Claude.ai, Claude Code, or Claude API) to manage the entire lifecycle of a modern company with **10,000% modular logic**.
 
 ---
 
-## ✨ What is this?
-
-`idealab-multiagent-skills` is an open skill library that powers **IDEALAB PARTNERS'** AI orchestration system. Each skill is a self-contained, versioned instruction set for an AI agent — covering everything from social media content creation to fully simulated digital twins of your customers.
-
-The **Orchestrator Agent** routes incoming tasks to the right specialist agents, chains their outputs, and delivers a unified result — all with a human-centric tone.
-
----
-
-## 🗺️ Architecture
+## 🗺️ The Full Business Circle (Architecture)
 
 ```mermaid
 graph TD
-    U[👤 User / Client] -->|Task Request| ORC[🧠 Orchestrator Agent]
+    %% Infrastructure Layer
+    subgraph Infrastructure
+        ORC[Orchestrator] --> MA[Multi-Agent Protocol]
+        MA --> MEM[Memory & Context]
+        MEM --> TO[Token Optimization]
+        TO --> AB[Anti-Bias Guard]
+        AB --> N8N[n8n Automation]
+    end
 
-    ORC --> SM[📱 Social Media Design]
-    ORC --> MR[🔍 Market Research]
-    ORC --> CRM[📋 CRM + Contact Tracking]
-    ORC --> DOC[📄 Document Design\nPDF · Excel · PowerPoint]
-    ORC --> CW[✍️ Copywriting]
-    ORC --> DP[🚀 Digital Product]
-    ORC --> BD[🧬 Brand DNA]
-    ORC --> DT[🤖 Digital Twin]
+    %% Strategy Layer
+    subgraph Strategy
+        MR[Market Research] --> BD[Brand DNA]
+        BD --> DT[Digital Twin/Persona]
+    end
 
-    SM --> ORC
-    MR --> ORC
-    CRM --> ORC
-    DOC --> ORC
-    CW --> ORC
-    DP --> ORC
-    BD --> ORC
-    DT --> ORC
+    %% Growth Layer
+    subgraph Growth
+        LG[Lead Generation] --> PR[Proposals]
+        PR --> CON[Contracts]
+        CON --> ONB[Client Onboarding]
+    end
 
-    ORC -->|Composed Output| U
+    %% Creation/Delivery Layer
+    subgraph Content_and_Delivery
+        CPY[Copywriting] --> SM[Social Media]
+        CPY --> EMA[Email Marketing]
+        SM --> VID[Video Creation]
+        CPY --> SEO[SEO Content]
+        EMA --> DOC[Document Design]
+        SEO --> DPR[Digital Product]
+        DPR --> ANL[Analytics & ROI]
+    end
+
+    %% Connections
+    Infrastructure -.-> Strategy
+    Strategy --> Growth
+    Growth --> Content_and_Delivery
+    Content_and_Delivery --> ANL
+    ANL --> ORC
 ```
 
 ---
 
-## 📚 Skill Catalog
-
-| # | Skill Folder | Description | Key Outputs |
-|---|-------------|-------------|-------------|
-| 1 | [`orchestrator`](skills/orchestrator/SKILL.md) | Routes tasks, manages state, composes final deliverable | Task routing map, composed report |
-| 2 | [`social-media-design`](skills/social-media-design/SKILL.md) | Content calendars, captions, visual briefs by platform | 30-day calendar, caption sets, visual guide |
-| 3 | [`market-research`](skills/market-research/SKILL.md) | Competitor analysis, trend mapping, ICP & SWOT | Research report, ICP card, SWOT matrix |
-| 4 | [`crm`](skills/crm/SKILL.md) | Contact ingestion, interaction logs, pipeline & follow-ups | CRM record, pipeline stage, follow-up sequence |
-| 5 | [`document-design`](skills/document-design/SKILL.md) | PDF reports, Excel dashboards, PowerPoint decks | Design brief + structured content |
-| 6 | [`copywriting`](skills/copywriting/SKILL.md) | Sales pages, emails, ads — human tone & persuasion | Copy blocks, email sequences, ad variations |
-| 7 | [`digital-product`](skills/digital-product/SKILL.md) | eBook, course, template pack, SaaS concept | Product spec, outline, pricing strategy |
-| 8 | [`brand-dna`](skills/brand-dna/SKILL.md) | Mission, vision, voice, archetype, visual system | Brand DNA canvas, tone guide, visual system |
-| 9 | [`digital-twin`](skills/digital-twin/SKILL.md) | Persona simulation, behavioral modeling, scenario testing | Persona profile, behavior map, scenario output |
+## 🧠 Why Use This?
+Most agents fail because they lack structured logic. Our **v2.0 "Ontology First"** architecture gives Claude:
+1. **Decision Context:** Every skill includes a logic map (Ontological Map).
+2. **Quality Gates:** Built-in `anti-bias` and `token-optimization` skills.
+3. **Claude Code Native:** Compatible with the latest Anthropic CLI and Marketplace.
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ Installation & Usage
 
-### 1. Clone the repository
-
+### ⚙️ Method 1: Claude Code (Recommended)
+Automatically load all skills into your workspace:
 ```bash
-git clone https://github.com/idealab-partners/idealab-multiagent-skills.git
-cd idealab-multiagent-skills
+# Clone the repo
+git clone https://github.com/kenbenju/idealab-multiagent-skills.git
+
+# Move skills to your project's .claude folder
+mkdir -p .claude/skills
+cp -r idealab-multiagent-skills/skills/* .claude/skills/
 ```
 
-### 2. Choose a skill
-
-Navigate to any skill folder and read the `SKILL.md`:
-
-```bash
-cat skills/orchestrator/SKILL.md
-```
-
-### 3. Invoke the skill in your AI system
-
-Copy the instructions from `SKILL.md` into your AI agent system prompt or multi-agent framework (LangChain, CrewAI, AutoGen, Claude, GPT, etc.).
-
-### 4. Run an example
-
-```bash
-cat skills/brand-dna/examples/example_01.md
-```
+### 🌐 Method 2: Claude.ai (Web)
+Compress any skill folder into a `.zip` and upload it to your Claude project or simply copy-paste the `SKILL.md` content into your project instructions.
 
 ---
 
-## 📁 Repository Structure
-
-```
-idealab-multiagent-skills/
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   └── feature_request.md
-│   └── PULL_REQUEST_TEMPLATE.md
-├── skills/
-│   ├── orchestrator/
-│   ├── social-media-design/
-│   ├── market-research/
-│   ├── crm/
-│   ├── document-design/
-│   ├── copywriting/
-│   ├── digital-product/
-│   ├── brand-dna/
-│   └── digital-twin/
-├── LICENSE
-├── README.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-└── CHANGELOG.md
-```
+## 🎬 Featured Skill: Video Creation v2.0
+We've introduced a **Vector-First** architecture for video.
+- Design storyboards with specific motion paths.
+- Define modular visual assets (vectors) for editors.
+- Build architectural briefs for AI video tools (Runway, Sora, Luma).
+See [video-creation/SKILL.md](skills/video-creation/SKILL.md).
 
 ---
 
-## 🤝 Contributing
+## 📂 Skill Catalog (22 Specialists)
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before submitting a pull request.
+| Category | Skills |
+|:---|:---|
+| **Core Admin** | `orchestrator`, `multi-agent`, `memory`, `token-optimization`, `anti-bias`, `n8n-workflows` |
+| **Strategy** | `market-research`, `brand-dna`, `digital-twin` |
+| **Sales** | `lead-generation`, `proposals`, `contracts`, `client-onboarding` |
+| **Marketing** | `copywriting`, `email-marketing`, `social-media-design`, `seo-content`, `video-creation` |
+| **Operations** | `digital-product`, `document-design`, `analytics-reporting` |
 
 ---
 
-## 🔒 Security
-
-Found a vulnerability? Please review our [Security Policy](SECURITY.md) and report it via email — **do not open a public issue**.
+## 🤝 Contribution Policy (**Approval Required**)
+We do **not** accept free-flow contributions. All changes must pass a rigorous audit by the **IDEALAB Core Team**.
+1. Fork the repo.
+2. Create your skill/update.
+3. Submit a PR.
+4. Wait for the audit and approval.
+*Unauthorized merges are strictly prohibited.*
 
 ---
 
 ## 📜 License
-
-This project is licensed under the **IDEALAB PARTNERS Software License v1.0**.  
-See [LICENSE](LICENSE) for full terms.
-
-Commercial use requires written permission from IDEALAB PARTNERS.
+Licensed under the **IDEALAB PARTNERS Custom Software License v2.0**. Personal use requires attribution; commercial use requires a dedicated partnership. See [LICENSE](LICENSE).
 
 ---
 
-<div align="center">
-
-Made with ❤️ by **IDEALAB PARTNERS**  
-🌐 [idealabpartners.com](https://idealabpartners.com) · 📧 hello@idealabpartners.com
-
-</div>
+*© 2026 IDEALAB PARTNERS — Elevating Agentic Potential.*

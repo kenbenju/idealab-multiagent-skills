@@ -1,0 +1,16 @@
+{
+  "skills": {
+    "path": "skills",
+    "auto_load": true,
+    "progressive_disclosure": true
+  },
+  "behavior": {
+    "enforce_anti_bias": true,
+    "save_memory_snapshots": true,
+    "optimize_tokens": true
+  },
+  "project": {
+    "name": "IDEALAB Multi-Agent Ecosystem",
+    "version": "2.0.0"
+  }
+}

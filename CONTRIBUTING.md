@@ -1,103 +1,43 @@
-# Contributing to IDEALAB PARTNERS Multi-Agent Skills
+# Contributing to IDEALAB Multi-Agent Skills
 
-Thank you for your interest in contributing! This guide will help you get started.
+Thank you for your interest in contributing! To maintain the **10,000% logic** standard and the safety of our users, we follow a strict review policy.
 
----
-
-## 🚀 Quick Start
-
-```bash
-# 1. Fork and clone the repository
-git clone https://github.com/<your-username>/idealab-multiagent-skills.git
-cd idealab-multiagent-skills
-
-# 2. Create a feature branch
-git checkout -b feat/your-skill-name
-
-# 3. Make your changes and commit
-git add .
-git commit -m "feat(skill-name): brief description of change"
-
-# 4. Push and open a Pull Request
-git push origin feat/your-skill-name
-```
+## 🚨 The Approval-Only Rule
+**All contributions MUST be approved by the IDEALAB Core Team.** We do not support "free" or unvetted merges to the main branch.
 
 ---
 
-## 📁 Skill Structure
+## Our Standards
 
-Every skill lives in `skills/<skill-name>/` and must follow this structure:
+### 1. The Skill Format (v2.0)
+Every skill must contain a `SKILL.md` file with the following structure:
+- **YAML Frontmatter:** Native Claude format (`name`, `description`, `trigger_phrases`).
+- **🗺️ Ontological Map:** Clear logical flow of the agent's brain.
+- **📥 Inputs & 📤 Outputs:** Standardized data schemas.
+- **Detailed Step-by-Step:** Context-rich instructions.
+- **Zero-Bias Check:** Must be compatible with the `anti-bias` skill.
 
-```
-skills/your-skill/
-├── SKILL.md           ← Required: main instruction file (see template below)
-├── examples/
-│   └── example_01.md  ← At least one working example
-└── resources/         ← Optional: templates, diagrams, reference files
-    └── .gitkeep
-```
-
-### SKILL.md Frontmatter Template
-
-```yaml
----
-name: Your Skill Name
-version: 1.0.0
-description: One-sentence description of what this skill does.
-author: Your Name <email@example.com>
-license: IDEALAB Partners v1.0
-inputs:
-  - name: input_field
-    type: string
-    description: What this input is for
-    required: true
-outputs:
-  - name: output_field
-    type: string
-    description: What this output contains
-agents_required:
-  - orchestrator
-tags:
-  - marketing
-  - automation
----
-```
+### 2. Quality Audit
+We review for:
+- **Token Efficiency:** Does the skill use minimal tokens for maximum impact?
+- **Tone Consistency:** Does it match the human-first tone of IDEALAB?
+- **Modular Integrity:** Does it play well with other agents in the `orchestrator`?
 
 ---
 
-## ✅ Pull Request Checklist
+## Contribution Workflow
 
-Before submitting a PR, ensure:
-
-- [ ] `SKILL.md` contains valid YAML frontmatter
-- [ ] At least one example in `examples/` demonstrates the skill end-to-end
-- [ ] Skill name in frontmatter matches the folder name
-- [ ] No sensitive data (API keys, passwords) is included
-- [ ] Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `refactor:`
-- [ ] You have read the [Code of Conduct](CODE_OF_CONDUCT.md)
-
----
-
-## 🐛 Reporting Bugs
-
-Use the **Bug Report** issue template. Include:
-- Skill name and version
-- Expected vs actual behavior
-- Minimal reproduction steps
-
-## 💡 Proposing New Skills
-
-Use the **Feature Request** issue template. Describe:
-- Problem the skill solves
-- Target inputs and outputs
-- Which existing skills it integrates with
+1.  **Fork** the repository.
+2.  **Branch:** Create a branch for your feature (`feat/new-skill-x`).
+3.  **Draft:** Create your skill following the v2.0 template.
+4.  **Self-Audit:** Run the `anti-bias` and `token-optimization` checks manually.
+5.  **PR:** Submit a Pull Request with a detailed explanation of the business value.
+6.  **Review:** An IDEALAB reviewer will provide feedback or request adjustments.
+7.  **Merge:** Only an IDEALAB Maintainer can finalize the merge.
 
 ---
 
-## 📜 License Agreement
+## ⚖️ Code of Conduct
+Respect, clarity, and professionalism are mandatory. See `CODE_OF_CONDUCT.md`.
 
-By contributing, you agree your contributions are licensed under the [IDEALAB PARTNERS License](LICENSE).
-
----
-
-© 2026 IDEALAB PARTNERS
+*© 2026 IDEALAB PARTNERS*
