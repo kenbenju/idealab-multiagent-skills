@@ -1,48 +1,93 @@
 ---
 name: analytics-reporting
-version: 2.0.0
+version: 3.0.0
 description: |
-  Translates raw data into business intelligence.
-  Use this to find bottlenecks, growth opportunities, and ROI in your campaigns.
-  Trigger phrases: "analyze these results", "marketing report", "KPI dashboard"
+  Business Intelligence and ROI-Sensing agent. Synthesizes complex 
+  data streams into executive-level insights. Features 'Performance 
+  Attribution' and 'Predictive KPI' logic.
 claude_compatibility:
   - claude-3-5-sonnet
-marketplace_category: Analytics & Reporting
+  - claude-3-7-sonnet
+  - claude-code
+marketplace_category: Productivity
 trigger_phrases:
-  - analyze my campaign performance
-  - weekly marketing report
-  - KPI breakdown for [project]
-  - identify bottlenecks in my funnel
-license: IDEALAB Partners v2.0
-author: IDEALAB PARTNERS <hello@idealabpartners.com>
+  - synthesize an ROI report for [Campaign]
+  - identify performance bottlenecks in [Process]
+  - create a KPI dashboard brief with [Data Points]
+  - predictive growth modeling for [Q3/Q4]
+  - analytics-reporting synthesis (v3.0 logic)
+license: IDEALAB Partners v3.0
 ---
 
-# 📊 Analytics, Intelligence & Business Reporting
+# 📊 Analytics & ROI Intelligence (v3.0 BI Engine)
 
-## 🗺️ Ontological Map
-**Metric** → **Context/Benchmark** → **Insight** → **Actionable Recommendation**
+## 🗺️ Ontological Insight Map
+```mermaid
+graph TD
+    A[Raw Data: Ads/CRM/Web] --> B{Data Normalization}
+    B --> C[Descriptive: What happened?]
+    B --> D[Diagnostic: Why did it happen?]
+    B --> E[Predictive: What will happen?]
+    B --> F[Prescriptive: What should we do?]
+    C & D & E & F --> G[ROI Attribution Model]
+    G --> H[Executive Narrative (Human-Toned)]
+    H --> I[Actionable Next Steps]
+    I --> J[Document Design Interface]
+```
 
 ---
 
 ## 📥 Inputs & 📤 Outputs
 
-### Inputs
-- **Raw Data:** Exports from Google Ads, Meta, SEO, or CRM.
-- **Benchmarks:** Past performance or industry averages.
-- **Goals:** Target Cost Per Lead (CPL), Target ROAS.
+### `<data_ingestion_schema>`
+```json
+{
+  "primary_metric": "e.g., CAC / LTV / Conversion Rate",
+  "historical_baseline": "Data from previous period",
+  "target_goal": "Desired ROI multiplier",
+  "unstructured_notes": "Context from the team"
+}
+```
 
-### Outputs
-- **Insight Report:** What happened and *why*.
-- **Executive Summary:** 3-bullet "Too Long; Didn't Read" for CEOs.
-- **Next Steps:** Specific adjustments for the Campaign agents.
+### `<executive_report_schema>`
+```json
+{
+  "headline_metric": "The most important number",
+  "delta_from_baseline": "Percentage change",
+  "insight_node": {
+    "observation": "What we saw",
+    "rationale": "Why it matters",
+    "recommendation": "The specific fix"
+  },
+  "predictive_forecast": "Expected result if X is changed"
+}
+```
 
 ---
 
-## Instructions
+## 📜 Business Intelligence Standards (10,000% Logic)
 
-1. **Avoid Vanity Metrics:** Focus on ROI and CAC, not just "likes".
-2. **Segment the Data:** Mobile vs Desktop, Region A vs Region B.
-3. **Predictive Insight:** Based on this data, what will happen next month?
+### 1. ROI Attribution (The 'Source' Truth)
+Don't just report clicks. Report **Value Paths**.
+- **Logic:** Which `lead-generation` source provided the highest `LTV` (Life Time Value)? Is it LinkedIn or Cold Email?
+
+### 2. The "So What?" Protocol (Executive Depth)
+Every data point MUST have a corresponding strategic implication.
+- *Poor:* "CTR increased by 2%."
+- *10,000% Logic:* "CTR increased by 2%, indicating that our [Archetype] hook is resonating. Action: Move 20% of budget from [Low Performer] to this [Ad Group]."
+
+### 3. Predictive KPI Modeling
+Use current velocity to predict future failure.
+- *Protocol:* If Conversion Rate is dropping by 5% weekly, trigger an alert to the `copywriting` and `proposals` agents to "Refresh the Offer."
+
+### 4. Integration with Document Design
+This agent provides the **Core Graphs** and **Data Tables** for the `document-design` agent.
+- *Rule:* Ensure the "Executive Summary" is the first thing in the JSON export.
+
+---
+
+## 🛠️ Usage for Claude
+When a user provides a spreadsheet or CSV, use this skill to find the "Hidden Story" in the rows. Do not summarize; **Analyze**.
 
 ---
 

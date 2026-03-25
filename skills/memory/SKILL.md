@@ -1,167 +1,100 @@
 ---
 name: memory
-version: 2.0.0
+version: 3.0.0
 description: |
-  Manages persistent context and structured memory across Claude sessions, agent calls,
-  and long multi-step projects. Prevents context loss, repetition, and drift.
-  Use this skill to store, retrieve, and summarize project memory between conversations.
-  Produces: memory snapshots, context summaries, session logs, recall prompts.
-  Trigger phrases: "remember this", "save context", "what did we decide",
-  "session memory", "persistent context", "don't forget", "carry this forward"
+  Enterprise-grade context management and persistence engine. 
+  Manages session states, RAG-aware data retrieval, and 
+  high-compression context snapshots. Ensures agent continuity 
+  across complex multi-step business cycles.
 claude_compatibility:
   - claude-3-5-sonnet
   - claude-3-7-sonnet
   - claude-code
 marketplace_category: Architecture & Infrastructure
 trigger_phrases:
-  - remember this for later
-  - save our context
-  - what did we decide about this
-  - carry this forward to the next session
-  - session memory snapshot
-  - don't lose this context
-  - persistent memory for agents
-license: IDEALAB Partners v2.0
-author: IDEALAB PARTNERS <hello@idealabpartners.com>
+  - retrieve last session state for [Project]
+  - create a context snapshot of [Current Module]
+  - prune memory to save [X] tokens
+  - merge session keys [A] and [B]
+  - persistent context initialization
+license: IDEALAB Partners v3.0
 ---
 
-> [!NOTE]
-> **Claude Usage** — Claude does not have persistent memory between conversations by default. This skill provides a structured protocol for MANUALLY managing context continuity across sessions using structured snapshots, summaries, and recall prompts.
+# 💾 Universal Memory & Context Logic (v3.0 RAG-Engine)
 
-# 🧠 Memory Agent — Persistent Context & Session Continuity
-
-## Objective
-
-Give Claude persistent, structured memory across sessions by maintaining a living memory document that captures decisions, context, and outputs — and by providing precision recall prompts that re-inject context efficiently when a new session begins.
-
----
-
-## Memory Architecture
-
-```
-MEMORY LAYERS (from fastest to deepest)
-
-Layer 0: Working Memory (current session)
-  → Claude's context window — active right now
-  → Capacity: up to 200K tokens
-
-Layer 1: Session Snapshot (end of session)
-  → Structured summary saved by user in a file/notes
-  → Injected at start of next session as a "memory prompt"
-  → Size target: < 2,000 tokens
-
-Layer 2: Project Memory (persistent across weeks)
-  → Versioned memory document: `memory/[project-name].md`
-  → Updated after every major milestone
-  → Size target: < 5,000 tokens
-
-Layer 3: Archive Memory (historical reference)
-  → Full transcripts, earlier versions
-  → Not injected — loaded on demand
+## 🏗️ Ontological Data Hierarchy
+```mermaid
+graph TD
+    A[Raw Interaction] --> B{Semantic Filter}
+    B -->|Trivial| C[Temporary Buffer]
+    B -->|Critical| D[Long-Term KV Store]
+    D --> E[Entity Relation Mapping]
+    E --> F[Context Snapshot]
+    F --> G[Cross-Agent Retrieval]
+    
+    C -->|Auto-Delete| H[Pruning]
+    G --> I[Agent Request]
 ```
 
 ---
 
-## Step-by-Step Instructions
+## 📥 Inputs & 📤 Outputs
 
-### Step 1 — Capture Working Decisions
-Throughout any session, tag important decisions with `[MEMORY]`:
-
-```
-[MEMORY] Brand voice: warm, direct, anti-jargon. Never use "synergy".
-[MEMORY] Target ICP: female founders, 30-45, LATAM, $5K-50K revenue.
-[MEMORY] Preferred pricing tier: mid ($297 - $997).
-[MEMORY] Avoid: passive voice, superlatives without data.
-```
-
-### Step 2 — Generate Session Snapshot (End of Session)
-At the end of each working session, produce a compact snapshot:
-
-```markdown
-# Memory Snapshot — [Project Name]
-Generated: [DATE TIME]
-Session: #[N]
-
-## What We Decided
-- [Decision 1]
-- [Decision 2]
-- [Decision 3]
-
-## Current State
-- Stage: [e.g., "Brand DNA complete, starting copywriting"]
-- Pending: [e.g., "Need client's logo files"]
-- Next session goal: [e.g., "Write 3 email sequences"]
-
-## Key Context (always inject)
-- Brand: [name], [industry], [archetype]
-- ICP: [name], [pain], [goal]
-- Tone: [adjectives]
-- Constraints: [word limits, platform rules, forbidden phrases]
-
-## Agent Outputs Generated This Session
-- `brand-dna`: [status: complete / draft / pending]
-- `copywriting`: [status]
-- `crm`: [status]
+### `<memory_read_schema>`
+```json
+{
+  "query_scope": "Full / Modular / Entity-Specific",
+  "project_id": "UUID / Project Name",
+  "recall_depth": "Surface (Latest 3) / Deep (Entire History)",
+  "semantic_filter": ["Keywords", "Roles"]
+}
 ```
 
-### Step 3 — Open New Session with Memory Recall Prompt
-At the START of each new session, inject:
-
-```
-[MEMORY RECALL — [Project Name] — Session #[N+1]]
-
-Continuing work on: [Project Name]
-We are building: [1-sentence description]
-Current stage: [where we left off]
-
-Key decisions already made:
-- [Decision 1]
-- [Decision 2]
-
-My ICP is: [compact ICP card]
-Brand voice: [adjectives, forbidden words]
-
-Today's goal: [specific task for this session]
-
-Do not re-ask questions we've already answered. Resume from where we left off.
-```
-
-### Step 4 — Memory Versioning
-Name memory files with semantic versions:
-```
-memory/
-├── [project-name]-v1.0.md   ← Initial brand setup
-├── [project-name]-v1.1.md   ← After campaign planning
-├── [project-name]-v2.0.md   ← After product launch
-```
-
-### Step 5 — Cross-Agent Memory Sharing
-When passing memory between agents in a multi-agent session, include only what's relevant per agent:
-
-```
-TO: copywriting agent
-MEMORY INJECT: {icp, brand_voice, product_description, forbidden_phrases}
-EXCLUDE: {crm_records, analytics_dashboards, contract_terms}
+### `<memory_snapshot_schema>`
+```json
+{
+  "snapshot_id": "system_generate_id",
+  "context_vector": {
+    "brand_dna": "current_state_ref",
+    "market_gaps": ["gap1", "gap2"],
+    "unresolved_tasks": ["task1"]
+  },
+  "compression_ratio": "0.X",
+  "token_savings": "int"
+}
 ```
 
 ---
 
-## Memory Commands for Claude
+## 🧠 Persistence & Retrieval Protocols
 
-| Command | Action |
-|---------|--------|
-| `MEMORY SAVE` | Generate a session snapshot now |
-| `MEMORY RECALL` | Re-inject the latest snapshot as context |
-| `MEMORY STATUS` | Show what's in current working memory |
-| `MEMORY CLEAR` | Declare a fresh start (new project) |
-| `MEMORY DELTA` | Show only what changed since last snapshot |
+### 1. Semantic Mirroring
+When an agent requests "Previous brand decisions," Memory must not just return text, but **Strategic Logic**:
+- *Inefficient Recall:* "We decided on blue colors."
+- *10,000% Logic Recall:* "Theme: Professional/Minimalist. Rationale: Archetype 'The Sage'. Primary: #0A192F. Avoid: Neon/Aggressive gradients."
+
+### 2. Context Pruning (The 'Noise Killer')
+To prevent "Context Drift" (where the LLM gets confused by old, irrelevant data), this skill automatically:
+- Identifies redundant instructions.
+- Summarizes solved problems into single-line "Truth Nodes".
+- Drops low-score logic paths from the active window.
+
+### 3. Cross-Agent Data Chaining
+If `market-research` discovers a new competitor, Memory:
+1. Updates the `Entity Relation Map`.
+2. Signals `copywriting` that the "Differentiation" module needs an update.
+3. Notifies `proposals` that a new objection has been added to the simulated `digital-twin`.
+
+### 4. Encryption & Privacy Gate
+Audit for Sensitive Data (PII). If a user provides a password or private financial data:
+- **Rule:** Do not store in persistent memory.
+- **Action:** Request a "Masked Alternative" from the user.
 
 ---
 
-## Integration Points
-- **Used by**: Every agent (inject before starting any session)
-- **Connects to**: `token-optimization` (compact memory = fewer tokens), `multi-agent` (shared state schema)
+## 🛠️ Usage for Claude
+Always call `memory` at the start of a `Claude Code` session. Use `ls -R` logic to find the latest snapshot files in the `.memory/` directory before proposing a path.
 
 ---
 
-*© 2026 IDEALAB PARTNERS — For use with Claude (claude.ai) and Claude Code*
+*© 2026 IDEALAB PARTNERS — Multi-Agent System*

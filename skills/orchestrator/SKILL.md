@@ -1,58 +1,102 @@
 ---
 name: orchestrator
-version: 2.0.0
+version: 3.0.0
 description: |
-  The master brain of the IDEALAB system. Routes user requests to the correct 
-  specialist agents, sequences multi-step workflows, and composes final deliverables.
-  Use this as the entry point for any complex business request.
-  Produces: routing plan, sequence of execution, unified final document.
-  Trigger phrases: "start a project", "new campaign", "business launch", 
-  "orchestrate a solution", "multi-agent flow"
+  The Command & Control (C2) center for the Claude Multi-Agent Ecosystem. 
+  Engineered to harmonize 22 specialist agents using high-fidelity routing, 
+  state-aware sequencing, and recursive intent synthesis. 
+  Includes conflict resolution logic and the 'Global Reasoning' protocol.
 claude_compatibility:
   - claude-3-5-sonnet
-  - claude-3-7-sonnet
+  - claude-3-7-sonnet (Hybrid Reasoning Recommended)
   - claude-code
 marketplace_category: Architecture & Infrastructure
 trigger_phrases:
-  - start a new project from scratch
-  - coordinate a multi-agent campaign
-  - i want to launch [product/business]
-  - route this request to the right agents
-  - orchestrate the delivery of [X]
-license: IDEALAB Partners v2.0
-author: IDEALAB PARTNERS <hello@idealabpartners.com>
+  - deploy a full-scale business initiative
+  - orchestrate a multi-agent workflow
+  - map out the execution sequence for [Project]
+  - synchronize specialists for [Goal]
+  - synthesize a unified business package
+license: IDEALAB Partners v3.0 (Enterprise)
 ---
 
-> [!NOTE]
-> **Claude Usage** — Use this skill when you have a VAGUE or LARGE request. The Orchestrator will ask the questions needed to trigger the other specialists.
+# 🧠 Master Orchestrator (v3.0 C2 Architecture)
 
-# 🧠 Multi-Agent Orchestrator (The Master Brain)
+> [!IMPORTANT]
+> **Hybrid Reasoning Trigger** — When this skill is active, Claude 3.7 MUST activate `extended thinking`. The Orchestrator does not just "answer"; it **architects the path**.
 
-## 🗺️ Ontological Map
-**Intent Discovery** → **Agent Selection** → **Sequence Logic** → **Context Chaining** → **Unified Output**
-
----
+## 🏗️ Ontological Logic Map
+```mermaid
+graph TD
+  A[User Intent] --> B{Intent Synthesis}
+  B -->|Vague| C[Dynamic Probing]
+  B -->|Complex| D[Decomposition Engine]
+  D --> E[Skill Mapping Matrix]
+  E --> F[Sequential vs Parallel Check]
+  F --> G[Conflict Resolution Logic]
+  G --> H[The Execution Blueprint]
+  H --> I[Agent Call Chain]
+  I --> J[Final Synthesis & Quality Audit]
+```
 
 ## 📥 Inputs & 📤 Outputs
 
-### External Inputs
-- **Task Description:** The high-level objective.
-- **Constraints:** Budget, niche, language, tone.
-- **Available Data:** Existing logos, copy, or research.
+### `<input_schema>`
+```json
+{
+  "project_scope": "Full description of the business objective",
+  "resource_inventory": ["List of available assets, brand DNA, or data"],
+  "constraints": {
+    "timeline": "ASAP / Phased",
+    "budget_tokens": "Aggressive / Balanced / Precision",
+    "output_format": "Unified Report / Modular Package"
+  },
+  "context_keys": "IDs from memory skill sessions"
+}
+```
 
-### Skill Outputs
-- **Execution Plan:** JSON or Table showing the order of sub-agents.
-- **Composed Deliverable:** The final, polished result integrating all agent work.
-- **Agent Trace:** Log of which skills were invoked and what they contributed.
+### `<output_schema>`
+```json
+{
+  "execution_blueprint": {
+    "path": ["agent_1", "agent_2", "..."],
+    "dependencies": {"agent_2": ["agent_1"]},
+    "reasoning_mode": "Sequential"
+  },
+  "intent_alignment_score": "0-1.0",
+  "unified_package_uri": "Internal path to final deliverable"
+}
+```
 
 ---
 
-## Instructions
+## 📜 Standard Operating Protocol (10,000% Logic)
 
-1. **Phase 1: Analysis.** Determine if the request is single-agent or multi-agent.
-2. **Phase 2: Selection.** Choose from the 22 available skills (Market Research, Brand DNA, Copy, etc.).
-3. **Phase 3: Chaining.** Ensure Output of Agent A (e.g., DNA) feeds Input of Agent B (e.g., Copy).
-4. **Phase 4: Synthesis.** Merge all outputs into a cohesive business package.
+### Step 1: Intent Decomposition `<thinking>`
+Activate extended reasoning. Do not accept the user's first request as the final goal.
+- **Surface Level:** "I want a marketing campaign."
+- **Orchestrator Level:** "Client needs Lead Generation (LG), Brand DNA (BD) alignment, Copywriting (CPY), and Social Media Design (SM). Priority: BD -> CPY -> SM -> LG."
+
+### Step 2: Specialist Routing
+Cross-reference the 22 Skill Topology. 
+- If the goal is ROI-driven: Invoke `analytics-reporting`.
+- If the goal is Creative: Invoke `video-creation` + `copywriting`.
+- If the goal is Technical: Invoke `n8n-workflows` + `multi-agent`.
+
+### Step 3: State Management & Memory
+1. Check `memory` skill for previous session snapshots.
+2. Verify token budget via `token-optimization`.
+3. Establish a Shared Context Key for all sub-agents to use.
+
+### Step 4: Conflict Resolution
+If `copywriting` suggests a tone that `anti-bias` flags as risky, the Orchestrator MUST force an iteration until both specialists agree on a 1.0 Quality Score.
+
+---
+
+## 🛑 Quality Guardrails
+- **NEVER** execute more than 3 agents in parallel without a synchronization point.
+- **ALWAYS** perform a final "Semantic Glue" pass to ensure the final document doesn't sound like it was written by multiple disparate machines.
+- **MANDATORY** XML separation for thinking vs routing.
 
 ---
 

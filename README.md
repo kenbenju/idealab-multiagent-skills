@@ -1,119 +1,68 @@
-# 🚀 IDEALAB PARTNERS — Multi-Agent Claude Skills Ecosystem (v2.0)
+# 🚀 SKILL-CLAUDE-MULTIAGENTES (v3.0) — The 10,000% Logic Library
 
-[![Claude Code Compatible](https://img.shields.io/badge/Claude--Code--Compatible-brightgreen?logo=anthropic)](https://anthropic.com/claude)
-[![License: IDEALAB v2.0](https://img.shields.io/badge/License-IDEALAB%20v2.0-blue)](LICENSE)
-[![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-orange)](CHANGELOG.md)
+[![Claude 3.7 Ready](https://img.shields.io/badge/Claude--3.7--Ready-purple?logo=anthropic)](https://anthropic.com/claude)
+[![License: IDEALAB v3.0](https://img.shields.io/badge/License-IDEALAB%20v3.0-blue)](LICENSE)
 
-Transform Claude into a high-performance business department. This repository contains **22 specialized skills** that guide Claude (Claude.ai, Claude Code, or Claude API) to manage the entire lifecycle of a modern company with **10,000% modular logic**.
+**SKILL-CLAUDE-MULTIAGENTES** is the world's most advanced library of modular business skills for Claude. Designed for **Claude Code**, **Claude 3.7 (Reasoning)**, and **Multi-Agent Orchestration**, this repository enables a complete autonomous business department.
 
 ---
 
-## 🗺️ The Full Business Circle (Architecture)
+## 🏛️ Ultra-Modular Architecture
 
 ```mermaid
 graph TD
-    %% Infrastructure Layer
-    subgraph Infrastructure
+    subgraph Master_Brain
         ORC[Orchestrator] --> MA[Multi-Agent Protocol]
-        MA --> MEM[Memory & Context]
-        MEM --> TO[Token Optimization]
-        TO --> AB[Anti-Bias Guard]
-        AB --> N8N[n8n Automation]
+        MA --> MEM[Memory/RAG]
     end
 
-    %% Strategy Layer
-    subgraph Strategy
-        MR[Market Research] --> BD[Brand DNA]
-        BD --> DT[Digital Twin/Persona]
-    end
-
-    %% Growth Layer
-    subgraph Growth
-        LG[Lead Generation] --> PR[Proposals]
+    subgraph Growth_Engine
+        LG[Lead Gen] --> PR[Proposals]
         PR --> CON[Contracts]
-        CON --> ONB[Client Onboarding]
+        CON --> ONB[Onboarding]
     end
 
-    %% Creation/Delivery Layer
-    subgraph Content_and_Delivery
-        CPY[Copywriting] --> SM[Social Media]
-        CPY --> EMA[Email Marketing]
-        SM --> VID[Video Creation]
+    subgraph Content_Factory
+        CPY[Copywriting] --> VID[Video Architecture]
         CPY --> SEO[SEO Content]
-        EMA --> DOC[Document Design]
-        SEO --> DPR[Digital Product]
-        DPR --> ANL[Analytics & ROI]
+        SEO --> DP[Digital Product]
     end
 
-    %% Connections
-    Infrastructure -.-> Strategy
-    Strategy --> Growth
-    Growth --> Content_and_Delivery
-    Content_and_Delivery --> ANL
-    ANL --> ORC
+    subgraph Quality_Control
+        AB[Anti-Bias Audit]
+        TO[Token Optimization]
+        ANL[Analytics ROI]
+    end
+
+    Master_Brain --> Strategy
+    Strategy --> Growth_Engine
+    Growth_Engine --> Content_Factory
+    Content_Factory --> Quality_Control
 ```
 
 ---
 
-## 🧠 Why Use This?
-Most agents fail because they lack structured logic. Our **v2.0 "Ontology First"** architecture gives Claude:
-1. **Decision Context:** Every skill includes a logic map (Ontological Map).
-2. **Quality Gates:** Built-in `anti-bias` and `token-optimization` skills.
-3. **Claude Code Native:** Compatible with the latest Anthropic CLI and Marketplace.
+## 🔑 Key Features (v3.0 Overhaul)
+- **XML-Based Reasoning:** Leverage Claude 3.7's hybrid thinking with structured `<thinking>` blocks.
+- **JSON Standard Output:** Seamless data handoffs between 22 specialized agents.
+- **Enterprise Automation:** Native logic for `n8n`, `Clay`, and `CRM` integration.
+- **10,000% Depth:** Each skill includes complex ontological maps and fail-safe protocols.
 
 ---
 
-## 🛠️ Installation & Usage
+## 📂 Installation
 
-### ⚙️ Method 1: Claude Code (Recommended)
-Automatically load all skills into your workspace:
+### 1. Claude Code (CLI)
 ```bash
-# Clone the repo
 git clone https://github.com/kenbenju/idealab-multiagent-skills.git
-
-# Move skills to your project's .claude folder
-mkdir -p .claude/skills
-cp -r idealab-multiagent-skills/skills/* .claude/skills/
+mkdir -p .claude/skills && cp -r idealab-multiagent-skills/skills/* .claude/skills/
 ```
 
-### 🌐 Method 2: Claude.ai (Web)
-Compress any skill folder into a `.zip` and upload it to your Claude project or simply copy-paste the `SKILL.md` content into your project instructions.
-
----
-
-## 🎬 Featured Skill: Video Creation v2.0
-We've introduced a **Vector-First** architecture for video.
-- Design storyboards with specific motion paths.
-- Define modular visual assets (vectors) for editors.
-- Build architectural briefs for AI video tools (Runway, Sora, Luma).
-See [video-creation/SKILL.md](skills/video-creation/SKILL.md).
-
----
-
-## 📂 Skill Catalog (22 Specialists)
-
-| Category | Skills |
-|:---|:---|
-| **Core Admin** | `orchestrator`, `multi-agent`, `memory`, `token-optimization`, `anti-bias`, `n8n-workflows` |
-| **Strategy** | `market-research`, `brand-dna`, `digital-twin` |
-| **Sales** | `lead-generation`, `proposals`, `contracts`, `client-onboarding` |
-| **Marketing** | `copywriting`, `email-marketing`, `social-media-design`, `seo-content`, `video-creation` |
-| **Operations** | `digital-product`, `document-design`, `analytics-reporting` |
-
----
-
-## 🤝 Contribution Policy (**Approval Required**)
-We do **not** accept free-flow contributions. All changes must pass a rigorous audit by the **IDEALAB Core Team**.
-1. Fork the repo.
-2. Create your skill/update.
-3. Submit a PR.
-4. Wait for the audit and approval.
-*Unauthorized merges are strictly prohibited.*
-
----
-
-## 📜 License
-Licensed under the **IDEALAB PARTNERS Custom Software License v2.0**. Personal use requires attribution; commercial use requires a dedicated partnership. See [LICENSE](LICENSE).
+### 2. Custom Name Setup
+To match the user's preference, rename your local folder:
+```bash
+mv idealab-multiagent-skills SKILL-CLAUDE-MULTIAGENTES
+```
 
 ---
 

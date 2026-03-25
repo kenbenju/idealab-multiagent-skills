@@ -1,63 +1,94 @@
 ---
 name: n8n-workflows
-version: 2.0.0
+version: 3.0.0
 description: |
-  Specialized skill for designing, building, and documenting complex automation 
-  workflows using n8n. Integrates Claude agents with external APIs, databases, 
-  and business tools.
-  Produces: n8n JSON workflow schemas, node transformation logic, error handling 
-  strategies, and trigger-action maps.
-  Trigger phrases: "build n8n workflow", "automate this in n8n", "n8n node setup",
-  "connect agents to zapier/n8n", "automation pipeline"
+  Enterprise logic bridge for n8n.ai and external API automation. 
+  Designs JSON structures for HTTP Request nodes, error handling 
+  with 'Wait' nodes, and complex conditional flows. 
+  Ensures Claude-to-Automation parity.
 claude_compatibility:
   - claude-3-5-sonnet
   - claude-3-7-sonnet
   - claude-code
-marketplace_category: Automation & Integration
+marketplace_category: Architecture & Infrastructure
 trigger_phrases:
-  - design a workflow for n8n
-  - generate n8n json
-  - connect my agent to n8n
-  - automate lead capture in n8n
-  - n8n error handling logic
-license: IDEALAB Partners v2.0
-author: IDEALAB PARTNERS <hello@idealabpartners.com>
+  - design a n8n workflow for [Automated Task]
+  - create JSON mapping for an n8n node
+  - build a webhook-to-database logic for [X]
+  - error recovery protocol for [API]
+  - n8n node-tier architecture
+license: IDEALAB Partners v3.0
 ---
 
-# 🤖 n8n Automation & Workflow Engineering
+# 🕸️ n8n Enterprise Workflow Bridge (v3.0 Automation Architect)
 
-## 🗺️ Ontological Map (Logic Flow)
-**Input** (Requirements) → **Logic** (Node Mapping & Transformation) → **Integration** (API/Auth) → **Output** (n8n JSON)
+## 🗺️ Ontological Automation Map
+```mermaid
+graph TD
+    A[Trigger: Webhook/Schedule] --> B{Data Ingestion}
+    B --> C[AI Agent/LLM Node]
+    C --> D{Conditional Logic}
+    D -->|True| E[Action: CRM/DB/Email]
+    D -->|False| F[Wait/Correction Loop]
+    E --> G[Feedback Loop back to A]
+```
 
 ---
 
 ## 📥 Inputs & 📤 Outputs
 
-### External Inputs
-- **Process Map:** Description of the manual workflow to automate.
-- **Tools List:** Apps involve (e.g., Slack, Gmail, Airtable, CRM).
-- **Trigger Type:** Webhook, Schedule, or App-based.
+### `<workflow_spec_schema>`
+```json
+{
+  "automations_objective": "e.g., Cold Email Inbound Processing",
+  "integration_points": ["Google Sheets", "Salesforce", "WhatsApp"],
+  "security_tier": "API Key / OAuth2 / Local Tunnel",
+  "performance_kpi": "Execution time < 5s"
+}
+```
 
-### Skill Outputs
-- **Workflow JSON:** Ready-to-import n8n schema.
-- **Node Configurations:** Specific settings for complex nodes (HTTP Request, Code, Merge).
-- **Data Transformation:** JavaScript code for 'Code' nodes to clean input.
+### `<node_configuration_schema>`
+```json
+{
+  "node_type": "n8n-nodes-base.httpRequest",
+  "parameters": {
+    "method": "POST",
+    "url": "https://api.example.com/v1/",
+    "authentication": "headerAuth",
+    "bodyParameters": {
+      "data": "={{ $json.content }}"
+    }
+  },
+  "error_logic": "Retry on 429 after 30s"
+}
+```
 
 ---
 
-## Step-by-Step Instructions
+## 📜 Automation Integrity Protocols
 
-### Step 1 — Define the Blueprint
-Identify the **Trigger**, **Actions**, and **Filters**.
-- Trigger: *When a new lead enters CRM...*
-- Filter: *If lead quality > 7...*
-- Action: *Notify Slack and Send Welcome Email.*
+### 1. The "Wait Node" Strategy
+Claude must design workflows that handle AI latency.
+- **Protocol:** If the LLM node takes >10s (e.g., deep reasoning), use an asynchronous `Webhook Response` to acknowledge receipt before finishing the logic.
 
-### Step 2 — Data Mapping & Ontology
-Map how data flows between nodes. Ensure "ID" consistency across disparate tools.
+### 2. JSON Payload Mapping
+Ensure data types match the destination.
+- *Issue:* Sending a "String" to a "Date" field in CRM.
+- *Skill Logic:* Use a `Map` node instruction to force format casting: `{{ new Date($json["created_at"]).toISOString() }}`.
 
-### Step 3 — Error Handling (The "Safety" Loop)
-Always add an Error Trigger or use "Continue on Fail" logic for non-critical nodes.
+### 3. Loop Protection
+Prevent runaway credits.
+- **Constraint:** All recursive loops must have a `max_iterations: 5` counter.
+
+### 4. Claude-to-n8n Schema Parity
+Ensure the Output of `copywriting` is mapped perfectly to an `Email` node.
+1. Define the `Subject`, `Body`, and `Variables` in a JSON block.
+2. Instruct the user to copy-paste this block into the n8n `Expression` field.
+
+---
+
+## 🛠️ Usage Hint
+This skill is the "Hands" of the ecosystem. While other agents "Think", `n8n-workflows` implements the "Action".
 
 ---
 
