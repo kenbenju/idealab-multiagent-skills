@@ -1,4 +1,4 @@
-# 🚀 SKILL-CLAUDE-MULTIAGENTES (v3.0) — The 10,000% Logic Library
+# 🚀 SKILL-CLAUDE-MULTIAGENTES
 
 [![Claude 3.7 Ready](https://img.shields.io/badge/Claude--3.7--Ready-purple?logo=anthropic)](https://anthropic.com/claude)
 [![License: IDEALAB v3.0](https://img.shields.io/badge/License-IDEALAB%20v3.0-blue)](LICENSE)
