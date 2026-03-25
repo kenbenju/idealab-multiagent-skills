@@ -1,0 +1,47 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / JS (if integrations are added)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.*.local
+
+# Python (if scripts are added)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Secrets — NEVER commit these
+*.pem
+*.key
+*.crt
+secrets.json
+config.secret.*
